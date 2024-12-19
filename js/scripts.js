@@ -588,7 +588,7 @@ var plugin_formcreator = new function() {
             id: sectionId,
             design: true
          }
-      }).success(function(data, httpCode) {
+      }).done(function(data) {
          var grid = group.gridstack;
          that.dirty = true;
          $.each(data, function(index, question) {
@@ -608,7 +608,7 @@ var plugin_formcreator = new function() {
             );
          });
          that.dirty = false;
-      }).complete(function () {
+      }).then(function () {
          that.setupGridStack(group);
          group.gridstack.float(false);
       });
